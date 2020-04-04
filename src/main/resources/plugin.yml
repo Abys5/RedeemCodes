@@ -1,0 +1,62 @@
+name: RedeemCodes
+version: ${project.version}
+main: me.abyss.redeemcodes.RedeemCodesMain
+authors: [Abyss]
+description: Plugin Allows the Server to have custom Redeem Codes for users to redeem for rewards.
+
+commands:
+  redeemcodes:
+    description: RedeemCode Command
+    aliases:
+      - rc
+      - redeem
+
+permissions:
+  # OP PERMISSION
+  redeemcodes.*:
+    default: op
+    description: Gives Access to all Redeem Codes Commands
+    children:
+      redeemcodes.admin.*: true
+      redeemcodes.user.*: true
+
+
+  # ADMIN COMMANDS
+  redeemcodes.admin.*:
+    description: Give Access to Create, Edit and Delete Codes
+    children:
+      redeemcode.admin.list: true
+      redeemcode.admin.create: true
+      redeemcode.admin.edit: true
+      redeemcode.admin.show: true
+      redeemcode.admin.help: true
+
+  redeemcodes.admin.list:
+    description: Lists all Codes
+
+  redeemcodes.admin.create:
+    description: Creates a Code
+
+  redeemcodes.admin.show:
+    description: Shows a Code
+
+  redeemcodes.admin.edit:
+    description: Edits a Code
+
+  redeemcodes.admin.help:
+    description: Help Menu for Admins
+
+
+  # USER COMMANDS
+  redeemcode.user.*:
+    description: Give Access to Help Menu and Redeem
+    default: not op
+    children:
+      redeemcode.user.help: true
+      redeemcode.user.redeem: true
+
+  redeemcode.user.help:
+    description: Help Menu for Users
+
+  redeemcode.user.redeem:
+    description: Redeems Code
