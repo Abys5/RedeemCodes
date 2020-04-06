@@ -13,9 +13,7 @@ public class MessageManager {
         player.sendMessage(ChatColor.GRAY+""+ChatColor.BOLD+"["+ChatColor.AQUA+ChatColor.BOLD+"RedeemCode"+ChatColor.GRAY+ChatColor.BOLD+"] "+ChatColor.RESET+msg);
     }
 
-    private static final String prefix = "";
-
-    public static void Log(String msg) {
-        RedeemCodesMain.getPlugin().getLogger().info(ChatColor.BLUE + "" + ChatColor.BOLD + prefix + " " + ChatColor.RESET + msg);
+    public static void log(String msg) {
+        RedeemCodesMain.getPlugin().getLogger().info(msg);
     }
 }

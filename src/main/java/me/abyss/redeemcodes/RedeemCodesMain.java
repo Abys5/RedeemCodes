@@ -1,10 +1,10 @@
 package me.abyss.redeemcodes;
 
-import me.abyss.redeemcodes.command.redeemCodesCMD;
+import me.abyss.redeemcodes.cmd.RedeemCodesCommand;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.logging.Logger;
+import java.util.logging.logger;
 
 public final class RedeemCodesMain extends JavaPlugin {
 
@@ -14,19 +14,18 @@ public final class RedeemCodesMain extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-        int pluginId = 6974; // <-- Replace with the id of your plugin!
+        int pluginId = 6974;
         Metrics metrics = new Metrics(plugin, pluginId);
 
         dataManager = new DataManager();
-        getServer().getPluginCommand("redeemcodes").setExecutor(new redeemCodesCMD());
+        getServer().getPluginCommand("redeemcodes").setExecutor(new RedeemCodesCommand());
 
 
-        Logger logger = this.getLogger();
         new UpdateChecker(this, 76786).getVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
-                MessageManager.Log("There is not a new update available.");
+                MessageManager.log("There is not a new update available.");
             } else {
-                MessageManager.Log("There is a new update available.");
+                MessageManager.log("There is a new update available.");
             }
         });
 
