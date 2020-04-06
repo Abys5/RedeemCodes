@@ -4,8 +4,6 @@ import me.abyss.redeemcodes.cmd.RedeemCodesCommand;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.logging.logger;
-
 public final class RedeemCodesMain extends JavaPlugin {
 
     private static RedeemCodesMain plugin;
