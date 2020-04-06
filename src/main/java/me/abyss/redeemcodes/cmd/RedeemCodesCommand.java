@@ -1,4 +1,4 @@
-package me.abyss.redeemcodes.command;
+package me.abyss.redeemcodes.cmd;
 
 import me.abyss.redeemcodes.Code;
 import me.abyss.redeemcodes.MessageManager;
@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author Abyss
  */
-public class redeemCodesCMD implements CommandExecutor {
+public class RedeemCodesCommand implements CommandExecutor {
 
     private static RedeemCodesMain plugin = RedeemCodesMain.getPlugin();
 
